@@ -5,7 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.voll.api.domain.consulta.Consulta;
 import med.voll.api.domain.direccion.Direccion;
+
+import java.util.Collection;
 
 @Table (name = "medicos")
 @Entity(name = "Medico")
@@ -68,5 +71,16 @@ public class Medico {
     }
     public void desactivarMedico() {
         this.activo = false;
+    }
+
+    @OneToMany(mappedBy = "medico")
+    private Collection<Consulta> consultas;
+
+    public Collection<Consulta> getConsultas() {
+        return consultas;
+    }
+
+    public void setConsultas(Collection<Consulta> consultas) {
+        this.consultas = consultas;
     }
 }
