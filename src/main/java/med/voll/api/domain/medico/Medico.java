@@ -1,11 +1,11 @@
-package med.voll.api.medico;
+package med.voll.api.domain.medico;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.direccion.Direccion;
+import med.voll.api.domain.direccion.Direccion;
 
 @Table (name = "medicos")
 @Entity(name = "Medico")
@@ -22,6 +22,8 @@ public class Medico {
 
     private String documento;
 
+    private Boolean activo;
+
     @Enumerated(EnumType.STRING)
     private Especialidad especialidad;
 
@@ -33,6 +35,7 @@ public class Medico {
     private Long id;
 
     public Medico(DatosRegistroMedico datosRegistroMedico) {
+        this.activo = true;
         this.nombre = datosRegistroMedico.nombre();
         this.email = datosRegistroMedico.email();
         this.documento = datosRegistroMedico.documento();
@@ -62,7 +65,8 @@ public class Medico {
         if(datosActualizarMedico.direccion() !=null){
             this.direccion = direccion.actualizarDatos(datosActualizarMedico.direccion());
         }
-
-
+    }
+    public void desactivarMedico() {
+        this.activo = false;
     }
 }
