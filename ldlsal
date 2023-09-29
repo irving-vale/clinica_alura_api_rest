@@ -1,0 +1,35 @@
+[33mcommit a1d2a42f1b2166f623c6cacdc3eb520815c95ad5[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Irving Lozada <75141924+irving-vale@users.noreply.github.com>
+Date:   Fri Sep 29 12:39:48 2023 -0600
+
+    Agregamiento de consulta
+
+[33mcommit 6b10270a680925e27d6c88d8790463d0ca2b3f69[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Irving Lozada <75141924+irving-vale@users.noreply.github.com>
+Date:   Fri Sep 29 00:02:03 2023 -0600
+
+    spring security
+
+[33mcommit f487b81f0cc1d66f65e3b979992b9db0c606cb5c[m
+Author: Irving Lozada <75141924+irving-vale@users.noreply.github.com>
+Date:   Thu Sep 28 19:44:56 2023 -0600
+
+    Control de accesos login con token
+
+[33mcommit 7b2d5ce670094f406cae39655b766531efadceb0[m
+Author: Irving Lozada <75141924+irving-vale@users.noreply.github.com>
+Date:   Sat Sep 23 23:33:54 2023 -0600
+
+    Spring_DATA_JPA y Request_get
+
+[33mcommit 99552ec04f5b617b3306186e5bae75df8efdff05[m
+Author: Irving Lozada <75141924+irving-vale@users.noreply.github.com>
+Date:   Thu Sep 21 23:58:36 2023 -0600
+
+    Request post DTO Record
+
+[33mcommit 13802a0bcdabfd750568287551114d48573d0f37[m
+Author: Irving Lozada <75141924+irving-vale@users.noreply.github.com>
+Date:   Thu Sep 21 19:14:04 2023 -0600
+
+    Inicianco proyecto
