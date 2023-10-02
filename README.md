@@ -1,14 +1,23 @@
+¡Gracias por la información adicional! Puedes agregar secciones en tu README para documentar las pruebas con JUnit y Mockito, así como la documentación en Swagger. Aquí tienes una versión actualizada de tu README que incluye estas secciones:
+
+```markdown
 # API REST de Clínica Allura
 
-Este repositorio contiene el código fuente de una API REST para la Clínica Allura, un sistema de gestión de médicos con especialidades. Esta API permite realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) relacionadas con los médicos y sus especialidades.
+Este repositorio contiene el código fuente de una API REST para la Clínica Allura, un sistema de gestión de médicos con especialidades, pacientes y consultas médicas. Esta API permite realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) relacionadas con médicos, pacientes, consultas y horarios de consultas.
 
 ## Características
 
 - Registro de médicos con detalles como nombre, email, teléfono y dirección.
+- Registro de pacientes con detalles como nombre, email, teléfono y dirección.
+- Registro de consultas médicas con información detallada, incluyendo médico, paciente y fecha.
 - Búsqueda de médicos por especialidad.
-- Actualización de información de médicos existentes.
-- Eliminación lógica de médicos (desactivación).
+- Búsqueda de pacientes por nombre o número de identificación.
+- Agenda de consultas que permite programar y gestionar horarios de consultas médicas.
+- Actualización de información de médicos, pacientes y consultas existentes.
+- Eliminación lógica de médicos, pacientes y consultas (desactivación).
 - Seguridad implementada con Spring Security y tokens JWT.
+- Pruebas unitarias con JUnit y Mockito.
+- Documentación en Swagger para una fácil comprensión y prueba de la API.
 
 ## Requisitos
 
@@ -97,6 +106,50 @@ DELETE /medicos/{id}
 
 Reemplaza `{id}` con el ID del médico que deseas desactivar.
 
+### Registro de Pacientes
+
+Puedes registrar un paciente utilizando una solicitud HTTP POST a la siguiente URL:
+
+```
+POST /pacientes
+```
+
+Envía los detalles del paciente en el cuerpo de la solicitud en formato JSON, similar al registro de médicos.
+
+### Búsqueda de Pacientes
+
+Puedes buscar pacientes por nombre o número de identificación utilizando una solicitud HTTP GET a la siguiente URL:
+
+```
+GET /pacientes?nombre=Juan
+```
+
+### Registro de Consultas
+
+Puedes registrar una consulta médica utilizando una solicitud HTTP POST a la siguiente URL:
+
+```
+POST /consultas
+```
+
+Envía los detalles de la consulta en el cuerpo de la solicitud en formato JSON, incluyendo información sobre el médico, el paciente y la fecha de la consulta.
+
+### Agenda de Consultas
+
+La API también proporciona funcionalidad para gestionar horarios de consultas médicas. Puedes crear, leer, actualizar y eliminar horarios de consultas utilizando las rutas y métodos correspondientes.
+
+## Pruebas Unitarias
+
+Se han realizado pruebas unitarias utilizando JUnit y Mockito para garantizar la calidad del código y la funcionalidad de la API. Puedes ejecutar estas pruebas para asegurarte de que todo funciona correctamente.
+
+## Documentación en Swagger
+
+La documentación completa de la API se encuentra disponible en Swagger para facilitar su comprensión y prueba. Puedes acceder a la documentación en la siguiente URL:
+
+```
+http://localhost:8080/swagger-ui.html
+```
+
 ## Contribución
 
 Si deseas contribuir a este proyecto, por favor, sigue estas pautas:
@@ -109,4 +162,6 @@ Si deseas contribuir a este proyecto, por favor, sigue estas pautas:
 ## Licencia
 
 Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para obtener más detalles.
+```
 
+Este README ahora incluye secciones para las pruebas unitarias con JUnit y Mockito, así como la documentación en Swagger para facilitar la comprensión y prueba de la API. Asegúrate de proporcionar la URL correcta para acceder a la documentación de Swagger en tu aplicación.
