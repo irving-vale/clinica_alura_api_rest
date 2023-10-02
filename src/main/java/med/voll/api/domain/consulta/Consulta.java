@@ -1,20 +1,21 @@
 package med.voll.api.domain.consulta;
 
-        import jakarta.persistence.*;
-        import lombok.AllArgsConstructor;
-        import lombok.EqualsAndHashCode;
-        import lombok.Getter;
-        import lombok.NoArgsConstructor;
-        import med.voll.api.domain.medico.Medico;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import med.voll.api.domain.medico.Medico;
+import med.voll.api.domain.paciente.Paciente;
 
-        import java.time.LocalDateTime;
+import java.time.LocalDateTime;
 
-@Table (schema = "consultas")
-@Entity (name = "Consulta")
+@Table(name = "consultas")
+@Entity(name = "Consulta")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode (of = "id")
+@EqualsAndHashCode(of = "id")
 public class Consulta {
 
     @Id
@@ -25,9 +26,25 @@ public class Consulta {
     @JoinColumn(name = "medico_id")
     private Medico medico;
 
-    //private Paciente paciente; -> se necesita crear la funcionalidad paciente
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "paciente_id")
+    private Paciente paciente;
 
-    private LocalDateTime date;
+    private LocalDateTime fecha;
+
+    @Column(name = "motivo_cancelamiento")
+    @Enumerated(EnumType.STRING)
+    private MotivoCancelamiento motivoCancelamiento;
+
+    public Consulta( Medico medico, Paciente paciente, LocalDateTime fecha) {
+        this.medico=medico;
+        this.paciente=paciente;
+        this.fecha=fecha;
+    }
+
+    public void cancelar(MotivoCancelamiento motivo) {
+        this.motivoCancelamiento = motivo;
+    }
 
 
 }
