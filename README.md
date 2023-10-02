@@ -1,4 +1,3 @@
-¡Gracias por la información adicional! Puedes agregar secciones en tu README para documentar las pruebas con JUnit y Mockito, así como la documentación en Swagger. Aquí tienes una versión actualizada de tu README que incluye estas secciones:
 
 ```markdown
 # API REST de Clínica Allura
